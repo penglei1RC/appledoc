@@ -73,6 +73,14 @@
 							{{/categories}}
 						</ul>
 						{{/hasCategories}}
+                        {{#hasBlocks}}
+                        <h2 class="index-title">{{strings.hierarchyPage.blocksTitle}}</h2>
+                        <ul>
+                            {{#blocks}}
+                            <li><a href="{{href}}">{{title}}</a></li>
+                            {{/blocks}}
+                        </ul>
+                        {{/hasBlocks}}
 					</div>
 					{{/hasProtocolsOrCategories}}
 

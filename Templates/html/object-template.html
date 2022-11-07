@@ -307,7 +307,32 @@ Section BlocksDefList
   {{/hasLongDescription}}
   {{/comment}}
   
-  {{#comment}}
+{{#comment}}
+{{#hasMethodParameters}}
+<div class="method-subsection arguments-section parameters">
+    <h4 class="method-subtitle parameter-title">{{strings.objectMethods.parametersTitle}}</h4>
+    <table class="argument-def parameter-def">
+    {{#methodParameters}}
+        <tr>
+            <th scope="row" class="argument-name"><code>{{argumentName}}</code></th>
+            <td>{{#argumentDescription}}{{>GBCommentComponentsList}}{{/argumentDescription}}</td>
+        </tr>
+    {{/methodParameters}}
+    </table>
+</div>
+{{/hasMethodParameters}}
+{{/comment}}
+
+{{#comment}}
+{{#hasMethodResult}}
+<div class="method-subsection return">
+    <h4 class="method-subtitle parameter-title">{{strings.objectMethods.resultTitle}}</h4>
+    {{#methodResult}}{{>GBCommentComponentsList}}{{/methodResult}}
+</div>
+{{/hasMethodResult}}
+{{/comment}}
+
+{{#comment}}
   {{#hasAvailability}}
   <div class="method-subsection availability">
   <h4 class="method-subtitle parameter-title">{{strings.objectMethods.availability}}</h4>
